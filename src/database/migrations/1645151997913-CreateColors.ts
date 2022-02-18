@@ -8,6 +8,11 @@ export class CreateColors1645151997913 implements MigrationInterface {
           name: "colors",
           columns: [
             {
+              name: "id",
+              type: "uuid",
+              isPrimary: true
+            },
+            {
               name: "header",
               type: "varchar",
             },
@@ -98,6 +103,16 @@ export class CreateColors1645151997913 implements MigrationInterface {
             {
               name: "empty_prizes",
               type: "varchar"
+            },
+            {
+              name: "created_at",
+              type: "timestamp",
+              default: "now()"
+            },
+            {
+              name: "updated_at",
+              type: "timestamp",
+              default: "now()"
             }
           ]
         })

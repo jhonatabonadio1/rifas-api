@@ -25,6 +25,10 @@ export class CreatePrizes1645150294830 implements MigrationInterface {
               type: "varchar"
             },
             {
+              name: "unique_price",
+              type: "varchar"
+            },
+            {
               name: "minimum_sales",
               type: "varchar"
             },
@@ -33,8 +37,8 @@ export class CreatePrizes1645150294830 implements MigrationInterface {
               type: "varchar"
             },
             {
-              name: "status",
-              type: "varchar"
+              name: "status_id",
+              type: "integer"
             },
             {
               name: "end_at",
@@ -50,7 +54,17 @@ export class CreatePrizes1645150294830 implements MigrationInterface {
               type: "timestamp",
               default: "now()"
             }
-          ]
+          ],
+          foreignKeys: [
+            {
+              name: "FKStatusId",
+              referencedTableName: "status",
+              referencedColumnNames: ["id"],
+              columnNames: ["status_id"],
+              onDelete: "SET NULL",
+              onUpdate: "SET NULL",
+            }
+          ],
         })
       )
     }
