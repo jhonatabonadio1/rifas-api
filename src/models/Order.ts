@@ -9,13 +9,19 @@ export class Order {
   @PrimaryColumn()
   readonly id: string;
 
+  @Column()
+  purchase_id: string;
+
   @JoinColumn({ name: "purchase_id" })
   @ManyToOne(() => Purchase)
-  purchase: string;
+  purchase: Purchase;
+
+  @Column()
+  prize_id: string;
 
   @JoinColumn({ name: "prize_id" })
   @ManyToOne(() => Prize)
-  prize: string;
+  prize: Prize;
 
   @Column()
   random_numbers: number;

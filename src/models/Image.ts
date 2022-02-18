@@ -9,9 +9,12 @@ class Image {
     @PrimaryColumn()
     readonly id: string;
 
+    @Column()
+    prize_id: string;
+
     @JoinColumn({ name: "prize_id" })
     @ManyToOne(() => Prize)
-    prize: string;
+    prize: Prize;
 
     @Column()
     url: string;

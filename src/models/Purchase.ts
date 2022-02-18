@@ -8,9 +8,12 @@ export class Purchase {
   @PrimaryColumn()
   readonly id: string;
 
+  @Column()
+  owner_id: string;
+
   @JoinColumn({ name: "owner_id" })
   @ManyToOne(() => User)
-  owner: string;
+  owner: User;
 
   @Column()
   totalValue: number;

@@ -9,13 +9,19 @@ export class Winner {
   @PrimaryColumn()
   readonly id: string;
 
+  @Column()
+  owner_id: string;
+
   @JoinColumn({ name: "owner_id" })
   @ManyToOne(() => User)
-  owner: string;
+  owner: User;
+
+  @Column()
+  prize_id: string;
 
   @JoinColumn({ name: "prize_id" })
   @ManyToOne(() => Prize)
-  prize: string;
+  prize: Prize;
 
   @Column()
   number_winner: number;

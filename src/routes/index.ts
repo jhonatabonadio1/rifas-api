@@ -11,6 +11,7 @@ import { FindUserController } from '../controllers/FindUserController';
 import { UpdateUserController } from '../controllers/UpdateUserController';
 import { UpdateUserPrivilegesController } from '../controllers/UpdateUserPrivilegesController';
 import { CreatePrizeController } from '../controllers/CreatePrizeController';
+import { CreateImagesController } from '../controllers/CreateImagesController';
 
 const routes = Router();
 
@@ -22,6 +23,7 @@ const findUserController = new FindUserController();
 const updateUserController = new UpdateUserController();
 const updateUserPrivilegesController = new UpdateUserPrivilegesController()
 const createPrizeController = new CreatePrizeController()
+const createImagesController = new CreateImagesController()
 
 // Users Routes
 routes.post('/authenticate', authUserController.handle);
@@ -33,6 +35,7 @@ routes.put("/users", ensureAuthenticated, updateUserController.handle)
 
 // Prizes Routes
 routes.post('/prizes', ensureAuthenticated, ensureAdmin, createPrizeController.handle);
+routes.post("/prizes/images", ensureAuthenticated, ensureAdmin, createImagesController.handle)
 
 // Admin Routes
 routes.put("/admin/privileges", ensureAuthenticated, ensureAdmin, updateUserPrivilegesController.handle)

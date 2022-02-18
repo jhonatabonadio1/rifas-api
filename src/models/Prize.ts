@@ -27,9 +27,12 @@ class Prize {
     @Column()
     total_numbers: number;
 
+    @Column()
+    status_id: number
+
     @JoinColumn({ name: "status_id" })
     @ManyToOne(() => Status)
-    status: number;
+    status: Status;
 
     @Column()
     end_at: Date;

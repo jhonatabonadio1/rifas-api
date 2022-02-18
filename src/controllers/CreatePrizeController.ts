@@ -10,7 +10,7 @@ class CreatePrizeController {
       unique_price,
       minimum_sales,
       total_numbers,
-      status,
+      status_id,
       end_at
      } = request.body;
 
@@ -23,7 +23,7 @@ class CreatePrizeController {
       unique_price,
       minimum_sales,
       total_numbers,
-      status,
+      status_id,
       end_at
     });
 
