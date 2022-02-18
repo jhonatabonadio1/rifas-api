@@ -5,7 +5,7 @@ import { Prize } from "./Prize";
 import { User } from "./User";
 
 @Entity()
-export class Winners {
+export class Winner {
   @PrimaryColumn()
   readonly id: string;
 
