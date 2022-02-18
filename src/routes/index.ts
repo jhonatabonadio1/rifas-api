@@ -1,11 +1,40 @@
 import { Router } from 'express';
+import { AuthUserController } from '../controllers/AuthUserController';
 
-import { InitialController } from '../controllers/InitialController';
+import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
+import { ensureAdmin } from '../middlewares/ensureAdmin';
+
+import { CreateUserController } from '../controllers/CreateUserController';
+import { ListUserController } from '../controllers/ListUserController';
+import { DeleteUserController } from '../controllers/DeleteUserController';
+import { FindUserController } from '../controllers/FindUserController';
+import { UpdateUserController } from '../controllers/UpdateUserController';
+import { UpdateUserPrivilegesController } from '../controllers/UpdateUserPrivilegesController';
+import { CreatePrizeController } from '../controllers/CreatePrizeController';
 
 const routes = Router();
 
-const initialController = new InitialController()
+const createUserController = new CreateUserController();
+const listUserController = new ListUserController();
+const authUserController = new AuthUserController();
+const deleteUserController = new DeleteUserController();
+const findUserController = new FindUserController();
+const updateUserController = new UpdateUserController();
+const updateUserPrivilegesController = new UpdateUserPrivilegesController()
+const createPrizeController = new CreatePrizeController()
 
-routes.get('/', initialController.handle);
+// Users Routes
+routes.post('/authenticate', authUserController.handle);
+routes.post('/users', createUserController.handle);
+routes.get('/users', ensureAuthenticated, ensureAdmin, listUserController.handle);
+routes.get("/users/:user_id", ensureAuthenticated, ensureAdmin, findUserController.handle)
+routes.delete("/users/:user_id", ensureAuthenticated, ensureAdmin, deleteUserController.handle)
+routes.put("/users", ensureAuthenticated, updateUserController.handle)
+
+// Prizes Routes
+routes.post('/prizes', ensureAuthenticated, ensureAdmin, createPrizeController.handle);
+
+// Admin Routes
+routes.put("/admin/privileges", ensureAuthenticated, ensureAdmin, updateUserPrivilegesController.handle)
 
 export { routes };

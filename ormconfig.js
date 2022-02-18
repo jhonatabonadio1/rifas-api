@@ -13,6 +13,8 @@ module.exports = {
   },**/
   "migrations": ["src/database/migrations/*.ts"],
   "entities": ["src/models/*.ts"],
+  "seeds": ['src/database/seeds/**/*.ts'],
+  "factories": ['src/database/factories/**/*.ts'],
   "cli": {
       "migrationsDir": "src/database/migrations",
       "entitiesDir": "src/models"

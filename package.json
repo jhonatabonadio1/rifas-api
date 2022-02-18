@@ -5,12 +5,16 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --transpile-only ./src/server.ts --ignore-watch node_modules",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "seed:config": "ts-node-dev ./node_modules/typeorm-seeding/dist/cli.js config",
+    "seed:run": "ts-node-dev ./node_modules/typeorm-seeding/dist/cli.js seed",
+    "dev:setup": "yarn typeorm migration:run && yarn seed:run"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "class-transformer": "^0.5.1",
     "cors": "^2.8.5",
+    "cpf-cnpj-validator": "^1.0.3",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "express-async-errors": "^3.1.1",
@@ -19,6 +23,7 @@
     "pg": "^8.7.3",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.43",
+    "typeorm-seeding": "^1.6.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
