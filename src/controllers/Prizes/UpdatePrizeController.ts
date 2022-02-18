@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { UpdatePrizeService } from "../services/UpdatePrizeService";
+import { UpdatePrizeService } from "../../services/Prizes/UpdatePrizeService";
 
 class UpdatePrizeController {
-  async handle(request: Request, response: Response) {
+  async handle(request: Request, response: Response){
 
     const {prize_id} = request.params
     const {
