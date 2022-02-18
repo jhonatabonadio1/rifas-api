@@ -1,6 +1,6 @@
 import { getCustomRepository } from "typeorm";
-import { PrizesRepositories } from "../repositories/PrizesRepositories";
-import { StatusRepositories } from "../repositories/StatusRepositories";
+import { PrizesRepositories } from "../../repositories/PrizesRepositories";
+import { StatusRepositories } from "../../repositories/StatusRepositories";
 
 interface IPrizeRequest {
   prize_id: string;

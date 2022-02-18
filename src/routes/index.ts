@@ -45,6 +45,9 @@ routes.get("/users/:user_id", ensureAuthenticated, ensureAdmin, findUserControll
 routes.delete("/users/:user_id", ensureAuthenticated, ensureAdmin, deleteUserController.handle)
 routes.put("/users", ensureAuthenticated, updateUserController.handle)
 
+// Addresses Routes
+
+
 // Prizes Routes
 routes.post('/prizes', ensureAuthenticated, ensureAdmin, createPrizeController.handle);
 routes.put("/prizes/:prize_id", ensureAuthenticated, ensureAdmin, updatePrizeController.handle)
@@ -56,6 +59,7 @@ routes.get("/prizes/:prize_id/images", listImagesController.handle)
 routes.post("/prizes/images", ensureAuthenticated, ensureAdmin, createImagesController.handle)
 routes.delete("/prizes/images/:image_id", ensureAuthenticated, ensureAdmin, deleteImagesController.handle)
 routes.put("/prizes/images/:image_id", ensureAuthenticated, ensureAdmin, updateImageOrderController.handle)
+
 // Schedule Routes
 
 
