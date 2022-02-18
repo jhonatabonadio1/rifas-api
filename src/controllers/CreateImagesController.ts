@@ -12,7 +12,7 @@ class CreateImagesController {
     const createImagesService = new CreateImagesService();
 
     const image = await createImagesService.execute({
-      prize: prize_id,
+      prize_id,
       url,
       order
     });

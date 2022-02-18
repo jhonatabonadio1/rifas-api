@@ -13,6 +13,7 @@ export default class CreateUsers implements Seeder {
         { name: 'in_schedule' },
         { name: 'disabled' },
         { name: 'draft' },
+        { name: 'finished' },
       ])
       .execute()
   }

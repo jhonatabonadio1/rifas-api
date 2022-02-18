@@ -1,19 +1,15 @@
 import { getCustomRepository } from "typeorm";
+import { PrizesRepositories } from "../repositories/PrizesRepositories";
 
-import { UsersRepositories } from "../repositories/UsersRepositories";
-
-interface IUser{
-  user_id: string;
-}
-
-class ListUserService {
+class ListPrizeService {
   async execute() {
-    const usersRepository = getCustomRepository(UsersRepositories);
+    const prizesRepository = getCustomRepository(PrizesRepositories);
 
-    const users = await usersRepository.find()
+    const prizes = await prizesRepository.find()
 
-    return users;
+   return prizes
+
   }
 }
 
-export { ListUserService };
+export { ListPrizeService };

@@ -41,8 +41,8 @@ export class CreateImages1645150309664 implements MigrationInterface {
               referencedTableName: "prizes",
               referencedColumnNames: ["id"],
               columnNames: ["prize_id"],
-              onDelete: "SET NULL",
-              onUpdate: "SET NULL",
+              onDelete: "CASCADE",
+              onUpdate: "CASCADE",
             }
           ],
         })

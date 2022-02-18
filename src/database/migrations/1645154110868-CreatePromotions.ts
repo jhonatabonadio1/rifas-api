@@ -41,8 +41,8 @@ export class CreatePromotions1645154110868 implements MigrationInterface {
               referencedTableName: "prizes",
               referencedColumnNames: ["id"],
               columnNames: ["prize_id"],
-              onDelete: "SET NULL",
-              onUpdate: "SET NULL",
+              onDelete: "CASCADE",
+              onUpdate: "CASCADE",
             }
           ],
         })

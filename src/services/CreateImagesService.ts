@@ -18,7 +18,7 @@ class CreateImagesService {
     const imagesRepository = getCustomRepository(ImagesRepositories);
     const prizesRepository = getCustomRepository(PrizesRepositories);
 
-    const verifyPrizeExists = prizesRepository.findOne({
+    const verifyPrizeExists = await prizesRepository.findOne({
       id: prize_id
     })
 

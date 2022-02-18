@@ -37,8 +37,8 @@ export class CreateSchedules1645185552660 implements MigrationInterface {
               referencedTableName: "prizes",
               referencedColumnNames: ["id"],
               columnNames: ["prize_id"],
-              onDelete: "SET NULL",
-              onUpdate: "SET NULL",
+              onDelete: "CASCADE",
+              onUpdate: "CASCADE",
             }
           ],
         })

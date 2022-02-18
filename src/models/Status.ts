@@ -4,7 +4,7 @@ import {Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColu
 class Status {
 
     @PrimaryGeneratedColumn('increment')
-    readonly id: string;
+    readonly id: number;
 
     @Column()
     name: string;

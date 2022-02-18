@@ -1,5 +1,6 @@
 import { getCustomRepository } from "typeorm";
 import { PrizesRepositories } from "../repositories/PrizesRepositories";
+import { StatusRepositories } from "../repositories/StatusRepositories";
 
 interface IPrizeRequest {
   title: string;
@@ -24,6 +25,15 @@ class CreatePrizeService {
     end_at,
   }: IPrizeRequest) {
     const prizesRepository = getCustomRepository(PrizesRepositories);
+    const statusRepository = getCustomRepository(StatusRepositories)
+
+    const verifyStatusExists = await statusRepository.findOne({
+      id: status_id
+    })
+
+    if(!verifyStatusExists){
+      throw new Error("Prize status does not exists.")
+    }
 
     const user = prizesRepository.create({
       title,

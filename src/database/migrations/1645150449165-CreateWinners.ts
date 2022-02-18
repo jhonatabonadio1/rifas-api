@@ -41,16 +41,16 @@ export class CreateWinners1645150449165 implements MigrationInterface {
               referencedTableName: "users",
               referencedColumnNames: ["id"],
               columnNames: ["owner_id"],
-              onDelete: "SET NULL",
-              onUpdate: "SET NULL",
+              onDelete: "CASCADE",
+              onUpdate: "CASCADE",
             },
             {
               name: "FKPrizeId",
               referencedTableName: "prizes",
               referencedColumnNames: ["id"],
               columnNames: ["prize_id"],
-              onDelete: "SET NULL",
-              onUpdate: "SET NULL",
+              onDelete: "CASCADE",
+              onUpdate: "CASCADE",
             }
           ],
         })
