@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "SQLite",
+            "database": "${workspaceFolder:rifas-api}/src/database/database.sql"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

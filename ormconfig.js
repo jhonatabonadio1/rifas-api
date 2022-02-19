@@ -1,11 +1,14 @@
 module.exports = {
+  database: "./src/database/database.sql",
+  type: "sqlite",
+  /**
   "type": "postgres",
   "host": "localhost",
   "port": 5432,
   "username": "postgres",
   "password": "docker",
   "database": "postgres",
-  /**extra: {
+  extra: {
       ssl: {
           require: true,
           rejectUnauthorized: false

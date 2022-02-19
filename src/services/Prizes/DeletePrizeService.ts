@@ -1,5 +1,5 @@
 import { getCustomRepository } from "typeorm";
-import { PrizesRepositories } from "../repositories/PrizesRepositories";
+import { PrizesRepositories } from "../../repositories/PrizesRepositories";
 
 interface IDevice {
   prize_id: string;
